@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .quiz-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        .image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+            padding: 15px;
+            background-color: rgba(248, 248, 248, 0.9);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .creator-info {
+            display: block;
+            font-size: 1.1em;
+            color: #fff;
+            margin: 0 0 15px 0;
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border-radius: 5px;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .creator-info:hover {
+            transform: translateY(-2px);
+        }
+        .options {
+            display: grid;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .option {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .option:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .selected {
+            background-color: rgba(224, 224, 224, 0.9);
+            border-color: #999;
+        }
+        .correct {
+            background: linear-gradient(135deg, #90EE90, #7FD17F);
+            border-color: #008000;
+            color: white;
+        }
+        .incorrect {
+            background: linear-gradient(135deg, #FFB6C1, #FF9AA2);
+            border-color: #FF0000;
+            color: white;
+        }
+        .score {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .question-number {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #666;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .result-container {
+            text-align: center;
+            display: none;
+            padding-bottom: 60px;
+        }
+        .play-again {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin: 20px 0 30px 0;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .play-again:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #333;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .header p {
+            color: #666;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="header">
+            <h1>Geography Quiz</h1>
+            <p>Test your knowledge of world landmarks and locations!</p>
+        </div>
+        <div id="quiz">
+            <div class="score">Score: <span id="score">0</span>/8</div>
+            <div class="question-number">Question <span id="question-number">1</span>/8</div>
+            <div class="image-container">
+                <img id="question-image" src="" alt="Geography Quiz Image">
+            </div>
+            <div class="creator-info">Created by: Ani</div>
+            <div class="question" id="question-text"></div>
+            <div class="options" id="options"></div>
+        </div>
+        <div class="result-container" id="result">
+            <h2>Quiz Completed!</h2>
+            <p>Your final score: <span id="final-score">0</span>/8</p>
+            <p id="result-message"></p>
+            <button class="play-again" onclick="location.reload()">Play Again</button>
+            <div style="margin-top: 20px;">
+                <div class="creator-info">Created by: Ani</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = null;
+        let selectedOption = null;
+
+        // Load initial question when page loads
+        window.onload = loadQuestion;
+
+        function loadQuestion() {
+            fetch('/question')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.finished) {
+                        showResult(data.score);
+                        return;
+                    }
+                    
+                    currentQuestion = data;
+                    document.getElementById('question-image').src = data.image;
+                    document.getElementById('question-text').textContent = data.question;
+                    document.getElementById('score').textContent = data.score;
+                    document.getElementById('question-number').textContent = data.question_number;
+                    
+                    const optionsContainer = document.getElementById('options');
+                    optionsContainer.innerHTML = '';
+                    
+                    data.options.forEach((option, index) => {
+                        const button = document.createElement('div');
+                        button.className = 'option';
+                        button.textContent = option;
+                        button.onclick = () => selectOption(index, button);
+                        optionsContainer.appendChild(button);
+                    });
+                });
+        }
+
+        function selectOption(index, button) {
+            if (selectedOption !== null) return;
+            
+            selectedOption = index;
+            button.classList.add('selected');
+            
+            fetch('/answer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ answer: index })
+            })
+            .then(response => response.json())
+            .then(data => {
+                button.classList.remove('selected');
+                button.classList.add(data.correct ? 'correct' : 'incorrect');
+                
+                if (data.correct) {
+                    document.getElementById('score').textContent = data.score;
+                }
+                
+                setTimeout(() => {
+                    selectedOption = null;
+                    if (data.finished) {
+                        showResult(data.score);
+                    } else {
+                        loadQuestion();
+                    }
+                }, 1000);
+            });
+        }
+
+        function showResult(score) {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('final-score').textContent = score;
+            
+            let message = '';
+            if (score === 8) {
+                message = 'Perfect score! You\'re a geography expert! 🌟';
+            } else if (score >= 6) {
+                message = 'Great job! You really know your geography! 🌍';
+            } else if (score >= 4) {
+                message = 'Good effort! Keep learning about our world! 🌎';
+            } else {
+                message = 'Keep exploring and learning about our fascinating world! 🌏';
+            }
+            
+            document.getElementById('result-message').textContent = message;
+        }
+    </script>
+</body>
+</html> 

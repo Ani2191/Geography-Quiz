@@ -16,31 +16,31 @@ recent_questions = deque(maxlen=24)  # 8 questions × 3 rounds = 24 questions to
 QUESTIONS = {
     'easy': [
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Ireland_and_GPO_Dublin_-_150524_171318.jpg/1280px-Flag_of_Ireland_and_GPO_Dublin_-_150524_171318.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Ireland_and_GPO_Dublin_-_150524_171318.jpg",
             "question": "What is the capital city of Ireland?",
             "options": ["Dublin", "Belfast", "Cork", "Galway"],
             "correct": 0
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/800px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Tour_Eiffel_Wikimedia_Commons.jpg",
             "question": "The Eiffel Tower is located in which city?",
             "options": ["London", "Paris", "Rome", "Berlin"],
             "correct": 1
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Canberra_montage.jpg/1024px-Canberra_montage.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Canberra_montage.jpg",
             "question": "What is the capital city of Australia?",
             "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
             "correct": 2
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Antartica.jpg/1280px-Antartica.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Antartica.jpg",
             "question": "Which is the largest desert in the world?",
             "options": ["Sahara Desert", "Arabian Desert", "Antarctic Desert", "Gobi Desert"],
             "correct": 2
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Wellington_Harbour_from_Mount_Victoria.jpg/1280px-Wellington_Harbour_from_Mount_Victoria.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wellington_Harbour_from_Mount_Victoria.jpg",
             "question": "What is the capital city of New Zealand?",
             "options": ["Auckland", "Wellington", "Christchurch", "Hamilton"],
             "correct": 1
@@ -48,31 +48,31 @@ QUESTIONS = {
     ],
     'medium': [
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Dead_sea_newspaper.jpg/1280px-Dead_sea_newspaper.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Dead_sea_newspaper.jpg",
             "question": "Which body of water is the lowest point on Earth's surface?",
             "options": ["Caspian Sea", "Dead Sea", "Red Sea", "Black Sea"],
             "correct": 1
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Stockholm_Archipelago.jpg/1280px-Stockholm_Archipelago.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Stockholm_Archipelago.jpg",
             "question": "Which country has the most islands in the world?",
             "options": ["Indonesia", "Japan", "Philippines", "Sweden"],
             "correct": 3
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Eyjafjallaj%C3%B6kull_first_crater_20100329.jpg/1280px-Eyjafjallaj%C3%B6kull_first_crater_20100329.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Eyjafjallaj%C3%B6kull_first_crater_20100329.jpg",
             "question": "Which country is known as the 'Land of Fire and Ice'?",
             "options": ["Norway", "Iceland", "Greenland", "Finland"],
             "correct": 1
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Pacific_Ring_of_Fire.svg/1280px-Pacific_Ring_of_Fire.svg.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Pacific_Ring_of_Fire.svg",
             "question": "The 'Ring of Fire' is located in which ocean?",
             "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
             "correct": 2
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Lalibela%2C_san_giorgio%2C_esterno_05.jpg/1280px-Lalibela%2C_san_giorgio%2C_esterno_05.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Lalibela%2C_san_giorgio%2C_esterno_05.jpg",
             "question": "Which African nation was never colonized by Europeans?",
             "options": ["Ethiopia", "Libya", "Egypt", "Sudan"],
             "correct": 0
@@ -80,31 +80,31 @@ QUESTIONS = {
     ],
     'hard': [
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Strait_of_Malacca_%28orthographic_projection%29.png/1024px-Strait_of_Malacca_%28orthographic_projection%29.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Strait_of_Malacca_%28orthographic_projection%29.png",
             "question": "The Strait of Malacca connects which two bodies of water?",
             "options": ["South China Sea & Indian Ocean", "Pacific & Indian Ocean", "Bay of Bengal & Arabian Sea", "Java Sea & Indian Ocean"],
             "correct": 0
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bhutan_tiger%27s_nest_monastery.jpg/1280px-Bhutan_tiger%27s_nest_monastery.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Bhutan_tiger%27s_nest_monastery.jpg",
             "question": "Which country has the world's only carbon-negative economy?",
             "options": ["Norway", "Bhutan", "Costa Rica", "New Zealand"],
             "correct": 1
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Dallol_hot_springs.jpg/1280px-Dallol_hot_springs.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/Dallol_hot_springs.jpg",
             "question": "The Danakil Depression, one of the lowest and hottest places on Earth, is located in which country?",
             "options": ["Ethiopia", "Saudi Arabia", "Yemen", "Sudan"],
             "correct": 0
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sargasso_Sea_map.png/1280px-Sargasso_Sea_map.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sargasso_Sea_map.png",
             "question": "The Sargasso Sea is the only sea without shores. In which ocean is it located?",
             "options": ["Pacific Ocean", "Indian Ocean", "Atlantic Ocean", "Southern Ocean"],
             "correct": 2
         },
         {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Burkina_Faso.svg/1280px-Flag_of_Burkina_Faso.svg.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Burkina_Faso.svg",
             "question": "Which African country was formerly known as Upper Volta?",
             "options": ["Mali", "Niger", "Burkina Faso", "Chad"],
             "correct": 2
@@ -130,7 +130,10 @@ def get_random_questions(difficulty, num_questions=8):
         recent_questions.clear()
         available_questions = questions
     
-    selected = random.sample(available_questions, min(num_questions, len(available_questions)))
+    # Ensure we don't try to select more questions than available
+    num_to_select = min(num_questions, len(available_questions))
+    selected = random.sample(available_questions, num_to_select)
+    
     for q in selected:
         recent_questions.append(q)
     return selected
@@ -142,7 +145,11 @@ def index():
 @app.route('/start')
 def start_quiz():
     difficulty = request.args.get('difficulty', 'medium')
-    session['questions'] = get_random_questions(difficulty)
+    if difficulty not in QUESTIONS:
+        difficulty = 'medium'
+    
+    questions = get_random_questions(difficulty, 5)  # Reduced to 5 questions per round
+    session['questions'] = questions
     session['current_question'] = 0
     session['score'] = 0
     return jsonify({'success': True})
